@@ -1,3 +1,5 @@
+Hi= Good
+$(info $(Hi))
 all: test1
 all: test3
 test1 test2:
