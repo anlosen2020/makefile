@@ -1,6 +1,6 @@
 hi =good 
 time =moring!
-string := $(hi)$(time)
+string = $(hi)$(time)
 $(info $(string))
 time= afternoon!
 $(info $(string))
