@@ -1,6 +1,10 @@
-hi =good 
-time =moring!
-string = $(hi)$(time)
-$(info $(string))
-time= afternoon!
-$(info $(string))
+.PHONY:all
+
+DEBUG= true
+ifeq ($(DEBUG),true)
+VERSION = debug
+else
+VERSION = release
+endif
+all:
+	@echo "build $(VERSION) mode"
