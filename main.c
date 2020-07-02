@@ -1,5 +1,8 @@
 #include<stdio.h>
+extern void hello();
 int main()
 {
-	printf("hello,world");
+	printf("main hello\n");
+	hello();
+	return 0;
 }
