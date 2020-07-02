@@ -1,5 +1,5 @@
 #include<stdio.h>
-extern void hello();
+#include "hello.h"
 int main()
 {
 	printf("main hello\n");
