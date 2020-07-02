@@ -1,8 +1,11 @@
-.PHONY:clean
-
-libhello.so:hello.o
-	gcc -o $@ -shared $^
-hello.o:hello.c
-	gcc -o $@ -fPIC -c $^
-clean:
-	rm libhello.so hello.o
+.PHONY:all
+all:
+	@echo "CC=$(CC)"
+	@echo "AS=$(AS)"
+	@echo "CXX=$(CXX)"
+	@echo "AR=$(AR)"
+	@echo "CXXFLAGS=$(CXXFLAGS)"
+	@echo "CFLAGS=$(CFLAGS)"
+	@echo "ASFLAGS=$(ASFLAGS)"
+	@echo "ARFLAGS=$(ARFLAGS)"
+	@echo "LDFLAGS=$(LDFLAGS)"
