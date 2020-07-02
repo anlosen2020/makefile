@@ -1,0 +1,7 @@
+.PHONY:clean
+hello:main.o
+	gcc -o $@ $^ -L./ -lhello
+main.o:main.c
+	gcc -o $@ -c $^
+clean:
+	rm hello main.o
