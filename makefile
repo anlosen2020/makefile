@@ -1,7 +1,8 @@
 .PHONY:clean
 
-libhello.a:hello.o
-	ar rcs $@ $^
-hello.o:hello.c hello.h
+libhello.so:hello.o
+	gcc -o $@ -shared $^
+hello.o:hello.c
+	gcc -o $@ -fPIC -c $^
 clean:
-	rm libhello.a hello.o
+	rm libhello.so hello.o

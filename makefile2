@@ -2,6 +2,6 @@
 hello:main.o
 	gcc -o $@ $^ -L./ -lhello
 main.o:main.c
-	gcc -o $@ -c $^
+	gcc -o $@ -c -fPIC $^
 clean:
 	rm hello main.o
