@@ -1,11 +1,9 @@
-.PHONY:all
-all:
-	@echo "CC=$(CC)"
-	@echo "AS=$(AS)"
-	@echo "CXX=$(CXX)"
-	@echo "AR=$(AR)"
-	@echo "CXXFLAGS=$(CXXFLAGS)"
-	@echo "CFLAGS=$(CFLAGS)"
-	@echo "ASFLAGS=$(ASFLAGS)"
-	@echo "ARFLAGS=$(ARFLAGS)"
-	@echo "LDFLAGS=$(LDFLAGS)"
+.PHONY:clean
+OBJS=player.o lcd.o usb.o
+BIN=mp3
+$(BIN):$(OBJS)
+	gcc -o $@ $^
+%.o:%.c
+	gcc -o $@ -c $^
+clean:
+	rm $(OBJS) $(BIN)
