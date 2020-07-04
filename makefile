@@ -1,7 +1,10 @@
 .PHONY:clean
-OBJS=player.o lcd.o usb.o
+SRCS=$(wildcard *.c)
+OBJS=$(SRCS:.c=.o)
 BIN=mp3
 $(BIN):$(OBJS)
+	@echo "SRCS====$(SRCS)"
+	@echo "OBJS====$(OBJS)"
 	gcc -o $@ $^
 %.o:%.c
 	gcc -o $@ -c $^
