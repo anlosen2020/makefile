@@ -1,4 +1,4 @@
 #ifndef __USB20_H
 #define __USB20_H
-#define VERSION "40"
+#define VERSION "55"
 #endif

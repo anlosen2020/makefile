@@ -21,8 +21,8 @@ $(BIN):$(LINK_OBJ)
 	@echo "LINK_OBJ=$(LINK_OBJ)"
 	gcc -o $@ $^
 $(LINK_OBJ_DIR)/%.o:%.c
-	gcc -o $@ -c $(filter %.c,$^)
+	gcc -I$(HEAD_PATH) -o $@ -c $(filter %.c,$^)
 $(DEP_DIR)/%.d:%.c
-	gcc -MM $(filter %.c,$^) | sed 's,\(.*\).o[ :]*,$(LINK_OBJ_DIR)/\1.o $@:,g'  >$@
+	gcc -I$(HEAD_PATH) -MM $(filter %.c,$^) | sed 's,\(.*\)\.o[ :]*,$(LINK_OBJ_DIR)/\1.o $@:,g'  >$@
 clean:
 	rm $(OBJS) $(BIN) $(DEPS)
