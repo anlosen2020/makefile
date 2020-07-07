@@ -10,3 +10,5 @@ clean:
 	rm -fr app/dep
 	rm -rf app/link_obj
 	rm -fr app/mp3
+	rm -fr app/lib_obj
+	rm MP3
