@@ -3,6 +3,7 @@
 #include "usb.h"
 #include "media.h"
 #include "math.h"
+#include "jpg.h"
 int main()
 {
 	printf("MP3 player init ....\n");
@@ -10,5 +11,6 @@ int main()
 	USB_init();
 	MEDIA_init();
 	MATH_init();
+	JPG_init();
 	return 0;
 }
