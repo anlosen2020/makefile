@@ -23,6 +23,7 @@ OBJ_DIR = $(LINK_OBJ_DIR)
 ifneq ("$(LIB)","")
 OBJ_DIR = $(LIB_OBJ_DIR)
 endif
+
 ifneq ("$(DLL)","")
 OBJ_DIR = $(LIB_OBJ_DIR)
 PIC = -fPIC
@@ -42,6 +43,7 @@ LINK_OBJ +=$(OBJS)
 
 LIB_DEP = $(wildcard $(LIB_DIR)/*.a) $(wildcard $(LIB_DIR)/*.so)
 LINK_LIB_NAME = $(patsubst lib%,-l%,$(basename $(notdir $(LIB_DEP))))
+
 
 all:$(DEPS) $(OBJS) $(LIB) $(DLL) $(BIN) 
 ifneq ("$(wildcard $(DEPS))","")
